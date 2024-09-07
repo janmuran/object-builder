@@ -9,9 +9,11 @@ use Psr\Http\Message\ResponseInterface;
 
 final class ResponseBuilder
 {
-    public function __construct(
-        private readonly SerializerInterface $serializer
-    ) {
+    private SerializerInterface $serializer;
+
+    public function __construct(SerializerInterface $serializer)
+    {
+        $this->serializer = $serializer;
     }
 
     /**
